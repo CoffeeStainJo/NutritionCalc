@@ -36,4 +36,4 @@ jobs:
       run: |
         cd NutritionCalc.Web/release/wwwroot
         dir
-        sed -i ‘s/<base href=”\/” \/>/<base href=”\/NutritionCalc.Web\/” \/>/g’ index.html
+        sed -i 's/<base href=”\/” \/>/<base href=”\/NutritionCalc.Web\/” \/>/g' index.html
