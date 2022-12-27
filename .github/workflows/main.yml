@@ -34,6 +34,22 @@ jobs:
     
     - name: Change base-tag in index.html
       run: |
-        cd NutritionCalc.Web/release/wwwroot
-        dir
+        cd NutritionCalc.Web/release/wwwroot        
         sed -i 's/<base href=”\/” \/>/<base href=”\/NutritionCalc.Web\/” \/>/g' index.html
+    
+    - name: copy index.html to 404.html
+      run: |
+        cd NutritionCalc.Web/release/wwwroot        
+        cp index.html 404.html
+        
+    - name: Add .nojekyll file
+      run: |
+        cd NutritionCalc.Web/release/wwwroot        
+        cp touch .nojekyll 
+    
+    - uses: JamesIves/github-pages-deploy-action@3.7.1
+      name: Commit wwwroot to GitHub pages
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: NutritionCalc.Web/release/wwwroot
