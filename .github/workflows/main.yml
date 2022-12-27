@@ -34,6 +34,6 @@ jobs:
     
     - name: Change base-tag in index.html
       run: |
-        cd NutritionCalc.Web/release
+        cd NutritionCalc.Web/release/wwwroot
         dir
-        sed -i ‘s/<base href=”\/” \/>/<base href=”\/NutritionCalc.Web\/” \/>/g’ release/wwwroot/index.html
+        sed -i ‘s/<base href=”\/” \/>/<base href=”\/NutritionCalc.Web\/” \/>/g’ index.html
