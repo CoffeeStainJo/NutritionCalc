@@ -1,43 +1,42 @@
-name: Deploy to GitHub pages
+name: publish
 
-# Run workflow on every push to the master branch
 on:
-push:
-branches: [ main ]
+  push:
+    branches: [ main ]
+
+env:
+  AZURE_WEBAPP_NAME: DotNetWeb
+  AZURE_WEBAPP_PACKAGE_PATH: '.' # Set this to the path to your web app project, defaults to the repository root:
+  DOTNET_VERSION: '7.0.101' # The .NET SDK version to use
 
 jobs:
-deploy-to-github-pages:
-# Use Ubuntu-latest image to run steps on
-runs-on: ubuntu-latest
-steps:
-# Uses GitHub’s checkout action to check out code from the master branch
-– uses: actions/checkout@v2
+  publish:
 
-# Sets up .NET Core SDK 3.1
-– name: Setup .NET Core SDK
-uses: actions/setup-dotnet@v3.0.3
-with:
-dotnet-version: 3.1
+    runs-on: ubuntu-latest
 
-# Publishes the Blazor project to the release folder
-– name: Publish .NET Core Project
-run: dotnet publish NutritionCalc.Web.csproj -c Release -o release –nologo
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
 
-# Changes the base tag in index.html from ‘/’ to ‘NutritionCalc.Web.csproj’ to match the GitHub Pages repository subdirectory
-– name: Change base-tag in index.html from / to NutritionCalc.Web.csproj
-run: sed -i ‘s/<base href=”\/” \/>/<base href=”\/NutritionCalc.Web\/” \/>/g’ release/wwwroot/index.html
-
-# Copy index.html to 404.html to serve the same file when a file is not found
-– name: copy index.html to 404.html
-run: cp release/wwwroot/index.html release/wwwroot/404.html
-
-# Add the .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
-– name: Add .nojekyll file
-run: touch release/wwwroot/.nojekyll
-
-– name: Commit wwwroot to GitHub pages
-uses: JamesIves/github-pages-deploy-action@3.7.1
-with:
-GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-BRANCH: gh-pages
-FOLDER: release/wwwroot
+    - name: Install dependencies
+      run: dotnet restore
+      
+    - name: Publish .NET Core Project
+      run: dotnet publish NutritionCalc.Web.csproj -c Release -o release –nologo
+    - name: Change base-tag in index.html
+      run: sed -i ‘s/<base href=”\/” \/>/<base href=”\/NutritionCalc.Web\/” \/>/g’ release/wwwroot/index.html
+      
+    - name: copy index.html to 404.html
+      run: cp release/wwwroot/index.html release/wwwroot/404.html
+    - name: Add .nojekyll file
+      run: touch release/wwwroot/.nojekyll
+      
+    - uses: JamesIves/github-pages-deploy-action@3.7.1
+      name: Commit wwwroot to GitHub pages
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: release/wwwroot
