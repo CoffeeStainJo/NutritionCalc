@@ -1,0 +1,11 @@
+﻿<!-- Display the tab headers -->
+<CascadingValue Value=this>
+    <ul class="@TabsCssClass">
+        @ChildContent
+    </ul>
+</CascadingValue>
+
+<!-- Display body for only the active tab -->
+<div class="@TabsContentCssClass">
+    @ActiveTab?.ChildContent
+</div>

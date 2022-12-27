@@ -1,0 +1,29 @@
+﻿<tr>
+    <td>energi</td>
+    <td>@Nutrition.Energy kcal</td>
+</tr>
+<tr>
+    <td>fett</td>
+    <td>@Nutrition.Fats g</td>
+</tr>
+<tr>
+    <td style="padding-left: calc(1.5em + .75rem);">-mettet fett</td>
+    <td>@Nutrition.Saturated g</td>
+</tr>
+<tr>
+    <td>karbohydrater</td>
+    <td>@Nutrition.Carbohydrates g</td>
+</tr>
+<tr>
+    <td style="padding-left: calc(1.5em + .75rem);">-sukker</td>
+    <td>@Nutrition.Sugars g</td>
+</tr>
+<tr>
+    <td>protein</td>
+    <td>@Nutrition.Protein g</td>
+</tr>
+
+@code
+{
+    [Parameter] public Nutrition Nutrition { get; set; }
+}

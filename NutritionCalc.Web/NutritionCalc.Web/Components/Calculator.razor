@@ -1,0 +1,104 @@
+﻿<div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>🔥🔥🔥Kalorikalkulator🔥🔥🔥</h1>
+</div>
+
+<div class="container" style="margin-top:30px">
+    <div class="row">
+        <div class="col-sm-4">
+            <TabSet>
+                <Tab Title="Energi per 100 g" TabActivated="HandleBudgetTabActivated">
+                    <EditForm class="form-group" EditContext="@m_BudgetContext">
+                        <DataAnnotationsValidator />
+                        <NutrientInput @bind-Value="@Service.Budget.CalorieBudget" @bind-IsDirty="CalorieBudgetIsChanged" />
+                        <NutrientInput @bind-Value="@Service.Budget.CaloriesPerHundredGrams" @bind-IsDirty="BudgetCaloriesPerHundredGramsIsChanged" />
+                        <NutrientInput @bind-Value="@Service.Budget.GramsOfFat" />
+                        <NutrientInput @bind-Value="@Service.Budget.GramsOfSaturatedFat" />
+                        <NutrientInput @bind-Value="@Service.Budget.GramsOfCarbohydrates" />
+                        <NutrientInput @bind-Value="@Service.Budget.GramsOfSugars" />
+                        <NutrientInput @bind-Value="@Service.Budget.GramsOfProtein" />
+                    </EditForm>
+                </Tab>
+                <Tab Title="Energi per enhet vare" TabActivated="HandleUnitTabActivated">
+                    <EditForm class="form-group" EditContext="@m_UnitContext">
+                        <DataAnnotationsValidator />
+                        <NutrientInput @bind-Value="@Service.UnitBudget.CalorieBudgetPerUnit" @bind-IsDirty="unitCaloriesBudgetChanged" />
+                        <NutrientInput @bind-Value="@Service.UnitBudget.GramsPerUnitProduct" @bind-IsDirty="unitGramsChanged" />
+                        <NutrientInput @bind-Value="@Service.UnitBudget.CaloriesPerUnitProduct" @bind-IsDirty="unitCaloriesChanged" />
+                        <NutrientInput @bind-Value="@Service.UnitBudget.GramsOfFatPerUnit" />
+                        <NutrientInput @bind-Value="@Service.UnitBudget.GramsOfSaturatedFatPerUnit" />
+                        <NutrientInput @bind-Value="@Service.UnitBudget.GramsOfCarbohydratesPerUnit" />
+                        <NutrientInput @bind-Value="@Service.UnitBudget.GramsOfSugarsPerUnit" />
+                        <NutrientInput @bind-Value="@Service.UnitBudget.GramsOfProteinPerUnit" />
+                    </EditForm>
+                </Tab>
+                <Tab Title="Kalorier" TabActivated="HandleCaloriesTabActivated">
+                    <EditForm class="form-group" EditContext="@m_CaloriesContext">
+                        <DataAnnotationsValidator />
+                        <NutrientInput @bind-Value="@Service.Calories.GramsPerUnitProduct" @bind-IsDirty="m_CaloriesChanged" />
+                        <NutrientInput @bind-Value="@Service.Calories.CaloriesPerHundredGrams" @bind-IsDirty="m_GramsChanged" />
+                        <NutrientInput @bind-Value="@Service.Calories.GramsOfFat" />
+                        <NutrientInput @bind-Value="@Service.Calories.GramsOfSaturatedFat" />
+                        <NutrientInput @bind-Value="@Service.Calories.GramsOfCarbohydrates" />
+                        <NutrientInput @bind-Value="@Service.Calories.GramsOfSugars" />
+                        <NutrientInput @bind-Value="@Service.Calories.GramsOfProtein" />
+                    </EditForm>
+                </Tab>
+            </TabSet>
+        </div>
+        <div class="col-sm-8">
+            @if (m_ShowBudget && Service.Budget.Nutrition.Grams != null)
+            {
+                <p>Vekt vare som kan spises: <bold>@Service.Budget.Nutrition.Grams g</bold></p>
+            }
+            @if (m_ShowUnit && Service.UnitBudget.Nutrition.Units != null)
+            {
+                <p>Antall enheter som kan spises: <bold>@Service.UnitBudget.Nutrition.Units</bold> á @Service.UnitBudget.GramsPerUnitProduct g hver.</p>
+            }
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Næringsinnhold</th>
+                        @if (m_ShowBudget && Service.Budget.Nutrition.Grams != null)
+                        {
+                            <th><strong>@Service.Budget.Nutrition.Grams g</strong> vare gir ca.</th>
+                        }
+                        @if (m_ShowUnit && Service.UnitBudget.Nutrition.Units != null)
+                        {
+                            <th><strong>@(Service.UnitBudget.Nutrition.Units * Service.UnitBudget.GramsPerUnitProduct) g</strong> vare gir ca.</th>
+                        }
+                        @if (m_ShowCalories && Service.Calories.Nutrition.Grams != null)
+                        {
+                            <th><strong>@(Service.Calories.Nutrition.Grams * 100) g</strong> vare gir ca.</th>
+                        }
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <SpaLoader IsLoading="(BudgetIsReady()) || (UnitIsReady()) || (CaloriesAreReady())">
+                        <LoadingTemplate>
+                        </LoadingTemplate>
+                        <ContentTemplate>
+                            @if (m_ShowBudget)
+                            {
+                                <NutritionData Nutrition="@Service.Budget.Nutrition" />
+                            }
+                            else if (m_ShowUnit)
+                            {
+                                <NutritionData Nutrition="@Service.UnitBudget.Nutrition" />
+                            }
+                            else
+                            {
+                                <NutritionData Nutrition="@Service.Calories.Nutrition" />
+                            }
+                        </ContentTemplate>
+                    </SpaLoader>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <p>🦥🦥🦥 -- 🦧🦧🦧</p>
+</div>

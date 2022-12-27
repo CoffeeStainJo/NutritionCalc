@@ -1,0 +1,132 @@
+﻿@using System.Reflection;
+@using System.ComponentModel.DataAnnotations;
+@using System.Globalization;
+<p>
+    <label for="@Id">@LabelText</label>
+    <input type="text" placeholder="@Placeholder" name="@Id" id="@Id" class="form-control @CssClass" @oninput="EventCallback.Factory.CreateBinder<string>(this, __value => CurrentValueAsString = __value, CurrentValueAsString)" value="@CurrentValue" @onkeyup="HandleKeyUp" @onkeydown="HandleKeyUp" @onfocusin="HandleFocusIn" pattern="\d*" inputmode="decimal" />
+    @if (HasDescription())
+    {
+        <small class="form-text text-muted">@Description</small>
+    }
+    @if (ShowError && IsDirty)
+    {
+        @foreach (var message in EditContext.GetValidationMessages(FieldIdentifier).Distinct())
+        {
+            <div class="validation-message">@message</div>
+        }
+    }
+    @if (!EditContext.GetValidationMessages(FieldIdentifier).Any())
+    {
+        <div class="valid-feedback">@string.Format(SuccessMessage)</div>
+    }
+</p>
+
+
+@inherits Microsoft.AspNetCore.Components.Forms.InputNumber<decimal?>
+@implements IDisposable
+@code
+{
+    [Parameter] public string Id { get; set; }
+    [Parameter] public bool IsDirty { get; set; }
+    [Parameter] public EventCallback<bool> IsDirtyChanged { get; set; }
+    [Parameter] public bool IsTouched { get; set; }
+    [Parameter] public EventCallback<bool> IsTouchedChanged { get; set; }
+    [Parameter] public string FormClass { get; set; } = string.Empty;
+    [Parameter] public string LabelText { get; set; } = string.Empty;
+    [Parameter] public string Description { get; set; } = string.Empty;
+    [Parameter] public string SuccessMessage { get; set; } = string.Empty;
+    [Parameter] public EventCallback<string> OnValid { get; set; }
+    [Parameter] public EventCallback<decimal?> ReCalculate { get; set; }
+    [Parameter] public bool ShowValidationErrorOnLoad { get; set; }
+    [Parameter] public string Placeholder { get; set; } = string.Empty;
+    //public bool ShowError => EditContext?.GetValidationMessages(FieldIdentifier).Any();
+    public bool ShowError => false;
+    string? oldValue;
+
+    protected override void OnInitialized()
+    {
+        Id = !string.IsNullOrWhiteSpace(Id) ? Id : $"input-{Guid.NewGuid()}";
+        ParsingErrorMessage = "Verdien må være et tall.";
+    }
+
+    protected override void OnParametersSet()
+    {
+        try
+        {
+            var displayAttribute = FieldIdentifier.Model.GetType()
+                                        .GetProperty(FieldIdentifier.FieldName)
+                                        .GetCustomAttribute<DisplayAttribute>();
+            if (displayAttribute != null)
+            {
+                var displayName = displayAttribute.Name;
+                if (string.IsNullOrWhiteSpace(displayName))
+                {
+                    LabelText = displayName;
+                }
+
+                //Placeholder = displayAttribute.Prompt;
+                LabelText = displayAttribute.Name;
+                //Description = displayAttribute.Description;
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+    }
+
+    protected override bool TryParseValueFromString(string value, out decimal? result, out string validationErrorMessage)
+    {
+        // Gets the InvariantInfo.
+        NumberFormatInfo myInv = NumberFormatInfo.InvariantInfo;
+        Console.WriteLine(myInv.CurrencyDecimalSeparator);
+
+        if (BindConverter.TryConvertTo<decimal?>(value, CultureInfo.GetCultureInfo("de-DE"), out result))
+        {
+            Console.WriteLine($"value={value} - result={result}");
+            validationErrorMessage = null;
+            return true;
+        }
+        else
+        {
+            validationErrorMessage = string.Format(CultureInfo.InvariantCulture, ParsingErrorMessage, DisplayName ?? FieldIdentifier.FieldName);
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Formats the value as a string. Derived classes can override this to determine the formatting used for <c>CurrentValueAsString</c>.
+    /// </summary>
+    /// <param name="value">The value to format.</param>
+    /// <returns>A string representation of the value.</returns>
+    protected override string? FormatValueAsString(decimal? value)
+    {
+        // Avoiding a cast to IFormattable to avoid boxing.
+        switch (value)
+        {
+            case null:
+                return null;
+            case decimal @double:
+                return BindConverter.FormatValue(@double, CultureInfo.GetCultureInfo("de-DE"));
+            default:
+                throw new InvalidOperationException($"Unsupported type {value.GetType()}");
+        }
+    }
+
+    public void Dispose() { }
+
+    private void HandleKeyUp()
+    {
+        IsDirty = true;
+        IsDirtyChanged.InvokeAsync(IsTouched);
+    }
+
+    private void HandleFocusIn()
+    {
+        IsTouched = true;
+        IsTouchedChanged.InvokeAsync(IsTouched);
+    }
+
+    private bool HasDescription()
+        => !string.IsNullOrWhiteSpace(Description);
+}
