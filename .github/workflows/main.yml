@@ -35,7 +35,7 @@ jobs:
     - name: Change base-tag in index.html
       run: |
         cd NutritionCalc.Web        
-        run: sed -i ‘s/<base href=”\/” \/>/<base href=”\/NutritionCalc.Web\/” \/>/g’ ../NutritionCalc.Web/wwwroot/index.html     
+        run: sed -i ‘s/<base href=”\/” \/>/<base href=”\/NutritionCalc.Web\/” \/>/g’ ../NutritionCalc.Web/NutritionCalc.Web/wwwroot/index.html     
       
     - name: copy index.html to 404.html
       run: |
