@@ -29,8 +29,7 @@ jobs:
     - name: Build
       run: |
         cd NutritionCalc.Web
-        dotnet build --configuration Release --no-restore
-        dotnet publish -c Release -o release –nologo
+        dotnet build --configuration Release --no-restore        
    
     - name: Publish .NET Core Project
       run: dotnet publish NutritionCalc.Web.csproj -c Release -o release –nologo
