@@ -9,7 +9,7 @@
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 <br />
 <br />
-<input type="text" pattern="\d*">
+<input type="text" pattern="/^\d*\.?\d*$/">
 
 @code {
     private int currentCount = 0;
