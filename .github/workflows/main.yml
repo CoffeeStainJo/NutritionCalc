@@ -30,7 +30,7 @@ jobs:
       run: |
         cd NutritionCalc.Web
         dotnet build --configuration Release --no-restore
-        dotnet publish NutritionCalc.Web.csproj -c Release -o release –nologo
+        dotnet publish -c Release -o release –nologo
    
     - name: Publish .NET Core Project
       run: dotnet publish NutritionCalc.Web.csproj -c Release -o release –nologo
