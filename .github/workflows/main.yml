@@ -22,7 +22,9 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
     
     - name: Install dependencies
-      run: dotnet restore
+      run: |
+        cd NutritionCalc.Web
+        dotnet restore
     
     - name: Build
       run: |
