@@ -20,10 +20,7 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
-
-    - name: Install dependencies
-      run: dotnet restore
-      
+     
     - name: Publish .NET Core Project
       run: dotnet publish NutritionCalc.Web.csproj -c Release -o release –nologo
     - name: Change base-tag in index.html
