@@ -45,7 +45,7 @@ jobs:
     - name: Add .nojekyll file
       run: |
         cd NutritionCalc.Web/release/wwwroot        
-        cp touch .nojekyll 
+        touch .nojekyll 
     
     - uses: JamesIves/github-pages-deploy-action@3.7.1
       name: Commit wwwroot to GitHub pages
