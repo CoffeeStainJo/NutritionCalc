@@ -30,7 +30,7 @@ jobs:
       run: |
         cd NutritionCalc.Web
         dotnet build --configuration Release --no-restore
-        dotnet publish -c Release -o ../NutritionCalc.Web   
+        dotnet publish -c Release -o release  
     
     - name: Change base-tag in index.html
       run: sed -i ‘s/<base href=”\/” \/>/<base href=”\/NutritionCalc.Web\/” \/>/g’ release/wwwroot/index.html     
