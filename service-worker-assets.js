@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-WwPDnJD53wMUAGo6jDQDmpzy8V1FbQ\/K6wDwE42ns74=",
+      "hash": "sha256-CxfdC+k+UBLelMrkCL6g\/z0LGlALQ21Fb6Frgb5o0mk=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -49,7 +49,7 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.Forms.dll"
     },
     {
-      "hash": "sha256-eOMg4KX\/Jd+\/eIdXBoECqfZWRo3m9EOWvLY0cVf4aAE=",
+      "hash": "sha256-6DS2rlXsc+ovtvasAFqu9D5B6A5+w8b9uGaa1Djz2Dg=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Web.dll"
     },
     {
@@ -105,7 +105,7 @@
       "url": "_framework\/netstandard.dll"
     },
     {
-      "hash": "sha256-5qFXKHppSjkN0gg4bBHCXw3wsweaEK0XKP6hrNMNgXI=",
+      "hash": "sha256-X+2pErNsS5WkDdvNWTeJd97dbIFChtNlOUqGGQSMC3I=",
       "url": "_framework\/NutritionCalc.Web.dll"
     },
     {
@@ -177,7 +177,7 @@
       "url": "_framework\/System.ObjectModel.dll"
     },
     {
-      "hash": "sha256-ADTF7071HWxVd+QV07soqxu0ZKByhnMjD3btWGfttIA=",
+      "hash": "sha256-TgnHCvgzvmCke7pS7slwU04BPo8+vPGLzS+YZnRENeA=",
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
@@ -185,7 +185,7 @@
       "url": "_framework\/System.Private.Uri.dll"
     },
     {
-      "hash": "sha256-FD8qtdqlG1s\/0nEXz8IpbmEPbueGXxjExgPTlOeZkIg=",
+      "hash": "sha256-wGdWjNcwQMdlN88Aq3uctB5uuERv48wXr2NQobze7nc=",
       "url": "_framework\/System.Runtime.dll"
     },
     {
@@ -277,5 +277,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "kSFQKOFH"
+  "version": "XF5xLL5B"
 };
