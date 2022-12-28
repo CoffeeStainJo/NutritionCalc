@@ -205,7 +205,7 @@
       "url": "NutritionCalc.Web.styles.css"
     },
     {
-      "hash": "sha256-10KEeWxsgry5D9LUZc0K86lpIg9RcWdyyBB5sXq6Ypk=",
+      "hash": "sha256-l37EeJDuXAFhgJDSDYghH8C8TtwL\/7n1hHIDNZqHEk0=",
       "url": "css\/app.css"
     },
     {
@@ -277,5 +277,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "XF5xLL5B"
+  "version": "pvN3G6sU"
 };
