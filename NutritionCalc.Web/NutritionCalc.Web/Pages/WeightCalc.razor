@@ -1,0 +1,71 @@
+﻿@page "/weight-calc"
+
+@using System.ComponentModel.DataAnnotations;
+@using Microsoft.Extensions.Logging
+@inject ILogger<WeightCalc> Logger
+
+<h3>WeightCalc</h3>
+
+
+<EditForm Model="@exampleModel" OnValidSubmit="@HandleLbsToKgsConversion">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputNumber id="name" @bind-Value="exampleModel.lbsWeight" placeholder="Weight in pounds"/>
+    @*<TallInput @bind-Value="@exampleModel.dWeight" />*@
+
+    <button type="submit">Calculate</button>
+
+    @if (!string.IsNullOrWhiteSpace(WeightInKgs))
+    {        
+        <p>@exampleModel.lbsWeight lbs is @WeightInKgs kg</p>
+    }
+</EditForm>
+
+<br />
+
+<EditForm Model="@exampleModel" OnValidSubmit="@HandleKgsToLbsConversion">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputNumber id="name" @bind-Value="exampleModel.kgsWeight" placeholder="Weight in kilograms" />
+
+    <button type="submit">Calculate</button>
+
+    @if (!string.IsNullOrWhiteSpace(WeightInPounds))
+    {
+        <p>@exampleModel.kgsWeight kgs is @WeightInPounds lbs</p>
+    }
+</EditForm>
+
+@code 
+{
+    private ExampleModel exampleModel = new();
+    private string? WeightInKgs = null;
+    private string? WeightInPounds = null;
+
+    private void HandleLbsToKgsConversion()
+    {
+        var weightInKiloGrams = exampleModel.lbsWeight / 2.20462;
+        WeightInKgs = weightInKiloGrams!.Value.ToString("F");
+    }
+
+    private void HandleKgsToLbsConversion()
+    {
+        var weightInLbs = exampleModel.kgsWeight * 2.20462;
+        WeightInPounds = weightInLbs!.Value.ToString("F");
+    }
+
+    public class ExampleModel
+    {
+        [Range(1, 9999999999999999.99, ErrorMessage = "Verdi må være større en 0.")]
+        public double? lbsWeight { get; set; }
+
+        [Range(1, 9999999999999999.99, ErrorMessage = "Verdi må være større en 0.")]
+        public double? kgsWeight { get; set; }
+
+        //[Required]
+        //[Range(1, 9999999999999999.99, ErrorMessage = "Verdi må være større en 0.")]
+        //public decimal? dWeight { get; set; }
+    }
+}
