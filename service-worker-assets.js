@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-CxfdC+k+UBLelMrkCL6g\/z0LGlALQ21Fb6Frgb5o0mk=",
+      "hash": "sha256-yCR1ophurL28YpaHZn\/Vy1J0OXH9BV5Iyr7UVX1RcOs=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -105,7 +105,7 @@
       "url": "_framework\/netstandard.dll"
     },
     {
-      "hash": "sha256-X+2pErNsS5WkDdvNWTeJd97dbIFChtNlOUqGGQSMC3I=",
+      "hash": "sha256-5xTS3T5tKzdXcVCxfyLzSzcgET4kEq61cCcH+JxLyW8=",
       "url": "_framework\/NutritionCalc.Web.dll"
     },
     {
@@ -141,7 +141,7 @@
       "url": "_framework\/System.ComponentModel.TypeConverter.dll"
     },
     {
-      "hash": "sha256-voY1yLs5sXmt5SGiB7XbDNnmEDlwIn2VyT1xNGKqFVc=",
+      "hash": "sha256-CnzyslNG3\/1aPV+FWqTNJ6QI70HG6cwL+b0owv86UUc=",
       "url": "_framework\/System.Console.dll"
     },
     {
@@ -161,15 +161,11 @@
       "url": "_framework\/System.Memory.dll"
     },
     {
-      "hash": "sha256-1BgZ+rjNg8sdeOysCiXVySjfR5MYoJ5tUxgKBrmjVDY=",
+      "hash": "sha256-+7xpPgtl+bi\/ectsaEWbBlMcQVoRUCwKN5V\/kENPnU0=",
       "url": "_framework\/System.Net.Http.dll"
     },
     {
-      "hash": "sha256-4o3\/LbLgBfOPB+1e1GVQ+rGKAifXb5ceJZUq6JXykdc=",
-      "url": "_framework\/System.Net.Http.Json.dll"
-    },
-    {
-      "hash": "sha256-G3lpICrr7JxWP3W4iKRvLTN0l0lCIO6bU+NqhBR\/BLU=",
+      "hash": "sha256-MuTcqRHpR2asQLlGC2L0rULFl5QXctZmuM2nerWb9Uc=",
       "url": "_framework\/System.Net.Primitives.dll"
     },
     {
@@ -177,19 +173,19 @@
       "url": "_framework\/System.ObjectModel.dll"
     },
     {
-      "hash": "sha256-TgnHCvgzvmCke7pS7slwU04BPo8+vPGLzS+YZnRENeA=",
+      "hash": "sha256-Ds62UROIO2boNjo7FhcqlHQjh3K1t\/egPuXhwsaaOOE=",
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-et30n7ozCLbMFva7wbuIzLwWDaLQ5ikhbKomISg3FZQ=",
+      "hash": "sha256-4gw9wvLuLFlQI8dJNRapJj\/S5fxDYnpQgc\/V0xl71Tw=",
       "url": "_framework\/System.Private.Uri.dll"
     },
     {
-      "hash": "sha256-wGdWjNcwQMdlN88Aq3uctB5uuERv48wXr2NQobze7nc=",
+      "hash": "sha256-H7YRSHgMeTiM\/4Gi4VjM+R3J1RzYwl2A2sMALogU3h8=",
       "url": "_framework\/System.Runtime.dll"
     },
     {
-      "hash": "sha256-zhBgy7xQKCG4WzbFKZAvKiQtQ6+lbW4xn63UUC0Hvac=",
+      "hash": "sha256-zvdZz94cE0MJOW4knnqNRgFJyUDSVj\/Tiger+czwWKw=",
       "url": "_framework\/System.Runtime.InteropServices.JavaScript.dll"
     },
     {
@@ -197,11 +193,11 @@
       "url": "_framework\/System.Text.Encodings.Web.dll"
     },
     {
-      "hash": "sha256-98TPDvsvEF9y8bGP6bS9DkaEwQ003bCFcGOzPF2eQFY=",
+      "hash": "sha256-Nd5T22ZVfM\/KybKGkPJHb2urKz6j9ubvMyAo0NZTWss=",
       "url": "_framework\/System.Text.Json.dll"
     },
     {
-      "hash": "sha256-\/mt6vmn8Zqmhjq2e7Np+fn6Kdm6V9ofZZk5Zgvpk+M4=",
+      "hash": "sha256-T+OMNzB2b\/bvldAH9Gv7Zf+7nhWT8qpEpOpnwxWXMEE=",
       "url": "NutritionCalc.Web.styles.css"
     },
     {
@@ -277,5 +273,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "pvN3G6sU"
+  "version": "gtv8vUTb"
 };
