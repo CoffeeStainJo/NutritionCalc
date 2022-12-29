@@ -12,8 +12,8 @@ public partial class TabSet
 
     protected override void OnParametersSet()
     {
-        TabsCssClass = CssBuilder.Empty().AddClass("nav nav-tabs").Build();
-        TabsContentCssClass = CssBuilder.Empty().AddClass("nav-tabs-body p-4").Build();
+        TabsCssClass = CssBuilder.Empty().AddClass("tabs").Build();
+        TabsContentCssClass = CssBuilder.Empty().AddClass("tabs").AddClass("content").Build();
     }
 
     public void AddTab(ITab tab)

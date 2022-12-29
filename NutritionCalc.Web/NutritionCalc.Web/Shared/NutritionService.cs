@@ -94,7 +94,7 @@ public class UnitBudget
 public class Calories
 {
     [Display(Name = "Vekt vare i gram ", Description = "kcal/100 g", Prompt = "I vare")]
-    [Required(ErrorMessage = "Antall gram per i varen må oppgis.", AllowEmptyStrings = true)]
+    [Required(ErrorMessage = "Antall gram i varen må oppgis.", AllowEmptyStrings = true)]
     [Range(1, 9999999999999999.99, ErrorMessage = "Verdi må være større en 0.")]
     public double? GramsPerUnitProduct { get; set; }
 

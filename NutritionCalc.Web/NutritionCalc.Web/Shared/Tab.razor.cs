@@ -20,8 +20,9 @@ public partial class Tab : ITab, IDisposable
     {
         TitleCssClass = CssBuilder
                         .Empty()
-                        .AddClass("nav-link")
-                        .AddClass("nav-link--active", when: ContainerTabSet.ActiveTab == this)
+                        .AddClass("tabs")
+                        .AddClass("tab")
+                        .AddClass("tab--active", when: ContainerTabSet.ActiveTab == this)
                         .Build();
     }
 
