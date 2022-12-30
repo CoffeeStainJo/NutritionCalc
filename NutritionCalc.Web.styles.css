@@ -11,6 +11,9 @@ main[b-sb61buaywp] {
 
 .sidebar[b-sb61buaywp] {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .top-row[b-sb61buaywp] {
