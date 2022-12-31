@@ -197,7 +197,7 @@
       "url": "_framework\/System.Text.Json.dll"
     },
     {
-      "hash": "sha256-Yuv\/Je8nMU93DHFddjaxtbtwnZpgrkC70QQF6s0W3kU=",
+      "hash": "sha256-UxXKYKobAQLMTyVt4a8iVzxqR5GIYt3ParONXPgpXYQ=",
       "url": "NutritionCalc.Web.styles.css"
     },
     {
@@ -273,5 +273,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "YFwCVh84"
+  "version": "x24im9\/O"
 };
