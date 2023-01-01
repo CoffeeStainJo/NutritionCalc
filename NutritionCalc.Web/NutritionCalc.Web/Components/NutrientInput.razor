@@ -1,6 +1,7 @@
 ﻿@using System.Reflection;
 @using System.ComponentModel.DataAnnotations;
 @using System.Globalization;
+
 <p>
     <label for="@Id">@LabelText</label>
     <input type="text" placeholder="@Placeholder" name="@Id" id="@Id" class="form-control @CssClass" @oninput="EventCallback.Factory.CreateBinder<string>(this, __value => CurrentValueAsString = __value, CurrentValueAsString)" value="@CurrentValue" @onkeyup="HandleKeyUp" @onkeydown="HandleKeyUp" @onfocusin="HandleFocusIn" pattern="\d*" inputmode="decimal" />

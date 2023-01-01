@@ -1,20 +1,16 @@
 ﻿@page "/weight-calc"
-
 @using System.ComponentModel.DataAnnotations;
 @using Microsoft.Extensions.Logging
+@using NutritionCalc.Web.Components
+
+
 @inject ILogger<WeightCalc> Logger
 
 <h3>WeightCalc</h3>
 
-
-<EditForm Model="@exampleModel" OnValidSubmit="@HandleLbsToKgsConversion">
+<EditForm class="form-group" EditContext="@_lbsToKgsContext">
     <DataAnnotationsValidator />
-    <ValidationSummary />
-
-    <InputNumber id="name" @bind-Value="exampleModel.lbsWeight" placeholder="Weight in pounds"/>
-    @*<TallInput @bind-Value="@exampleModel.dWeight" />*@
-
-    <button type="submit">Calculate</button>
+    <NutrientInput @bind-Value="@exampleModel.lbsWeight" @bind-IsDirty="_lbsIsChanged" />
 
     @if (!string.IsNullOrWhiteSpace(WeightInKgs))
     {        
@@ -24,13 +20,9 @@
 
 <br />
 
-<EditForm Model="@exampleModel" OnValidSubmit="@HandleKgsToLbsConversion">
+<EditForm class="form-group" EditContext="@_kgsToLbsContext">
     <DataAnnotationsValidator />
-    <ValidationSummary />
-
-    <InputNumber id="name" @bind-Value="exampleModel.kgsWeight" placeholder="Weight in kilograms" />
-
-    <button type="submit">Calculate</button>
+    <NutrientInput @bind-Value="@exampleModel.kgsWeight" @bind-IsDirty="_kgsIsChanged" />
 
     @if (!string.IsNullOrWhiteSpace(WeightInPounds))
     {
@@ -41,8 +33,46 @@
 @code 
 {
     private ExampleModel exampleModel = new();
+    private EditContext _lbsToKgsContext;
+    private EditContext _kgsToLbsContext;
     private string? WeightInKgs = null;
     private string? WeightInPounds = null;
+    private bool _lbsIsChanged, _kgsIsChanged;
+    private bool _lbsFormInvalid = true;
+    private bool _kgsFormInvalid = true;
+
+    protected override void OnInitialized()
+    {        
+        base.OnInitialized();
+        _lbsToKgsContext = new EditContext(exampleModel);
+        _kgsToLbsContext = new EditContext(exampleModel);
+        _lbsToKgsContext.OnFieldChanged += (_, __) =>
+        {
+            if (_lbsIsChanged)            
+                _lbsFormInvalid = !_lbsToKgsContext.Validate();
+
+            if (!_lbsFormInvalid && exampleModel.lbsWeight is not null)
+            {
+                var weightInKiloGrams = exampleModel.lbsWeight / 2.20462;
+                WeightInKgs = weightInKiloGrams!.Value.ToString("F");
+            }
+            StateHasChanged();
+        };
+
+        _kgsToLbsContext.OnFieldChanged += (_, __) =>
+        {
+            if (_lbsIsChanged)
+                _kgsFormInvalid = !_kgsToLbsContext.Validate();
+
+            if (!_kgsFormInvalid && exampleModel.kgsWeight is not null)
+            {
+                var weightInLbs = exampleModel.kgsWeight * 2.20462;
+                WeightInPounds = weightInLbs!.Value.ToString("F");
+            }
+            StateHasChanged();
+        };
+
+    }
 
     private void HandleLbsToKgsConversion()
     {
@@ -58,14 +88,14 @@
 
     public class ExampleModel
     {
+        [Display(Name = "Weight in pounds ", Description = "kcal/100 g", Prompt = "I vare")]
+        //[Required(ErrorMessage = "Weight must be supplied.", AllowEmptyStrings = false)]
         [Range(1, 9999999999999999.99, ErrorMessage = "Verdi må være større en 0.")]
         public double? lbsWeight { get; set; }
 
+        [Display(Name = "Weight in kilograms ", Description = "kcal/100 g", Prompt = "I vare")]
+        //[Required(ErrorMessage = "Weight must be supplied.", AllowEmptyStrings = false)]
         [Range(1, 9999999999999999.99, ErrorMessage = "Verdi må være større en 0.")]
         public double? kgsWeight { get; set; }
-
-        //[Required]
-        //[Range(1, 9999999999999999.99, ErrorMessage = "Verdi må være større en 0.")]
-        //public decimal? dWeight { get; set; }
     }
 }
