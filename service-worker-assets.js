@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-iUKyJpxKmrAqmVMhM3lkd9pjtoExCYCFX0KWRwYnmM4=",
+      "hash": "sha256-AA1xXFm6hDKjcR\/LItQ9KAndv8ffH6wOWNBZEX0LnfI=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -49,7 +49,7 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.Forms.dll"
     },
     {
-      "hash": "sha256-6DS2rlXsc+ovtvasAFqu9D5B6A5+w8b9uGaa1Djz2Dg=",
+      "hash": "sha256-eOMg4KX\/Jd+\/eIdXBoECqfZWRo3m9EOWvLY0cVf4aAE=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Web.dll"
     },
     {
@@ -105,7 +105,7 @@
       "url": "_framework\/netstandard.dll"
     },
     {
-      "hash": "sha256-uUZDJQBevG38icLcN7K5Kuy9GJgEuUhKSqp6jO27hKc=",
+      "hash": "sha256-rHpo0\/+EyUHTKYlqtknxcizq55WpTwVPvxUQu7XbI54=",
       "url": "_framework\/NutritionCalc.Web.dll"
     },
     {
@@ -273,5 +273,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "6jdZ00ac"
+  "version": "lKRPll0X"
 };
