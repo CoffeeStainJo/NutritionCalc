@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-h9bQzJtDVEWgeKamUtZPORQFGKDc4NaE\/H+R2x4f3sY=",
+      "hash": "sha256-KqfchClObboZhpjUUVDufLQOEsDfWLPF0pb+6Bh18Gw=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -105,7 +105,7 @@
       "url": "_framework\/netstandard.dll"
     },
     {
-      "hash": "sha256-UOi7cusbblzeseKtq1boJD9aKpN332GwNTzvnjdzqNQ=",
+      "hash": "sha256-rlJKGLsk5MOh2o2nCfBVkEbkQQgl08+KkbaQgVdCivw=",
       "url": "_framework\/NutritionCalc.Web.dll"
     },
     {
@@ -197,7 +197,7 @@
       "url": "_framework\/System.Text.Json.dll"
     },
     {
-      "hash": "sha256-QNq17I645Ei\/IGUTT0b2Cq+XiE5oPU3sAoQnBtxEsts=",
+      "hash": "sha256-puYrjvYtQOPINnOG2TejSqFibkFdjD9Djr2cLzwEL7U=",
       "url": "NutritionCalc.Web.styles.css"
     },
     {
@@ -273,5 +273,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "s7I7VclB"
+  "version": "IXvcBRoQ"
 };

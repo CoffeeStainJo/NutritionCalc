@@ -103,6 +103,20 @@ main[b-sb61buaywp] {
     vertical-align: text-top;
     top: -2px;
 }
+.navbar-toggler[b-5u7sqekb2a] {
+    padding: 0 !important;
+}
+
+#app > div > div > div.top-row.ps-3.navbar.navbar-dark > div > div > div > div[b-5u7sqekb2a] {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#app > div > div > div.top-row.ps-3.navbar.navbar-dark > div > div[b-5u7sqekb2a] {
+    border: 0 !important;
+    background-color: transparent !important;
+}
 
 .nav-item[b-5u7sqekb2a] {
     font-size: 0.9rem;
@@ -111,7 +125,7 @@ main[b-sb61buaywp] {
 
     .nav-item:first-of-type[b-5u7sqekb2a] {
         /*padding-top: 1rem;*/
-    }
+}
 
     .nav-item:last-of-type[b-5u7sqekb2a] {
         padding-bottom: 1rem;
