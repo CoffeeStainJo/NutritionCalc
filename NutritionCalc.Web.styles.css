@@ -85,7 +85,7 @@ main[b-sb61buaywp] {
 }
 /* /Shared/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-5u7sqekb2a] {
-    background-color: rgba(255, 255, 255, 0.1);
+    /*background-color: rgba(255, 255, 255, 0.1);*/
 }
 
 .top-row[b-5u7sqekb2a] {
@@ -110,7 +110,7 @@ main[b-sb61buaywp] {
 }
 
     .nav-item:first-of-type[b-5u7sqekb2a] {
-        padding-top: 1rem;
+        /*padding-top: 1rem;*/
     }
 
     .nav-item:last-of-type[b-5u7sqekb2a] {
@@ -138,6 +138,10 @@ main[b-sb61buaywp] {
 
 @media (min-width: 641px) {
     .navbar-toggler[b-5u7sqekb2a] {
+        display: none;
+    }
+
+    .ios-nav[b-5u7sqekb2a]{
         display: none;
     }
 
