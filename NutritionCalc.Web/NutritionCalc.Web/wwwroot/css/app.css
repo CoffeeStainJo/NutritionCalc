@@ -136,7 +136,7 @@ a, .btn-link {
     }
 
         .sidebar .nav-item:first-of-type {
-            padding-top: 1rem;
+            /*padding-top: 1rem;*/
         }
 
         .sidebar .nav-item:last-of-type {
