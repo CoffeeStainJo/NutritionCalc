@@ -18,8 +18,6 @@
     }
 </EditForm>
 
-<br />
-
 <EditForm class="form-group" EditContext="@_kgsToLbsContext">
     <DataAnnotationsValidator />
     <NutrientInput @bind-Value="@exampleModel.kgsWeight" @bind-IsDirty="_kgsIsChanged" />
