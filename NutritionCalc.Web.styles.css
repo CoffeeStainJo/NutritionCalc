@@ -1,3 +1,5 @@
+@import '_content/Microsoft.AspNetCore.Components.QuickGrid/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css';
+
 /* /Pages/Index.razor.rz.scp.css */
 .drag-drop-zone[b-7igmgoxxup] {
     border: 3px dashed #e68710;
