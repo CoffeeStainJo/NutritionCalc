@@ -1,30 +1,25 @@
 ﻿@page "/"
+@using Microsoft.AspNetCore.Components.QuickGrid
 
 <PageTitle>Index</PageTitle>
 
-@*<div class="jumbotron">
-  <h1 class="display-4">Hello, world!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </p>
-</div>*@
-
-<div class="drag-drop-zone">
-    <InputFile OnChange="LoadFiles" class="load-files"/>
-    @status
-</div>
+<QuickGrid Items="@people">
+    <PropertyColumn Property="@(p => p.PersonId)" Sortable="true" />
+    <PropertyColumn Property="@(p => p.Name)" Sortable="true" />
+    <PropertyColumn Property="@(p => p.BirthDate)" Format="yyyy-MM-dd" Sortable="true" />
+</QuickGrid>
 
 @code 
 {
-    const string DefaultStatus = "Drop a text file here to view it, or click to choose a file";
-    const int MaxFileSize = 5 * 1024 * 1024; // 5MB
-    string status = DefaultStatus;
+    record Person(int PersonId, string Name, DateOnly BirthDate);
 
-    private void LoadFiles(InputFileChangeEventArgs e)
+    IQueryable<Person> people = new[]
     {
-        //
-    }
+        new Person(10895, "Jean Martin", new DateOnly(1985, 3, 16)),
+        new Person(10944, "António Langa", new DateOnly(1991, 12, 1)),
+        new Person(11203, "Julie Smith", new DateOnly(1958, 10, 10)),
+        new Person(11205, "Nur Sari", new DateOnly(1922, 4, 27)),
+        new Person(11898, "Jose Hernandez", new DateOnly(2011, 5, 3)),
+        new Person(12130, "Kenji Sato", new DateOnly(2004, 1, 9)),
+    }.AsQueryable();
 }
