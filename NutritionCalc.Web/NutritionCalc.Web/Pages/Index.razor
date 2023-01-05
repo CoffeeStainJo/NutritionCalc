@@ -9,6 +9,14 @@
     <PropertyColumn Property="@(p => p.BirthDate)" Format="yyyy-MM-dd" Sortable="true" />
 </QuickGrid>
 
+@*<button class="btn btn-primary" style="background-color:red; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    Click me!
+</button>
+
+<div class="parent">
+    <div class="child">I'm centered!</div>
+</div>*@
+
 @code 
 {
     record Person(int PersonId, string Name, DateOnly BirthDate);

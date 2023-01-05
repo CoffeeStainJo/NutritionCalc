@@ -33,3 +33,16 @@
     opacity: 0 !important;
     cursor: pointer !important;
 }
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.child {
+    width: 50%;
+    height: 50%;
+    background-color: red;
+}
