@@ -36,6 +36,19 @@
     opacity: 0 !important;
     cursor: pointer !important;
 }
+
+.parent[b-7igmgoxxup] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.child[b-7igmgoxxup] {
+    width: 50%;
+    height: 50%;
+    background-color: red;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-sb61buaywp] {
     position: relative;
