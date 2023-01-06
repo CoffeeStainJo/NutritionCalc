@@ -109,7 +109,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-b9u88K6\/Fsw1MnDYzIf6fhihXeJpK\/Ph77SB+yQW2ik=",
+      "hash": "sha256-koD8btrlqYvZICB45azFgE+32cJa12FAXi7k2ujY1t8=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -185,7 +185,7 @@
       "url": "_framework\/netstandard.dll"
     },
     {
-      "hash": "sha256-sJaKeWid+W\/WKNTKkTOHrsv8+VgEFNbzsS0S5yd7lmw=",
+      "hash": "sha256-cy4N60rL33dokewX5LNMZWY0axl3viRk9ph\/POA7A10=",
       "url": "_framework\/NutritionCalc.Web.dll"
     },
     {
@@ -293,5 +293,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.QuickGrid\/QuickGrid.razor.js"
     }
   ],
-  "version": "XZ65RhP+"
+  "version": "Pb5a8\/Q1"
 };
