@@ -109,7 +109,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-koD8btrlqYvZICB45azFgE+32cJa12FAXi7k2ujY1t8=",
+      "hash": "sha256-XqaqmTiimq89EjXnV61nd14Z6HG4wi7uyv\/NAs7qe2s=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -117,7 +117,7 @@
       "url": "_framework\/BlazorComponentUtilities.dll"
     },
     {
-      "hash": "sha256-pLisA1gOLvuY8plox17tvjIcOG6LcVXq\/UzxbsorQNw=",
+      "hash": "sha256-Qd0YR41Aun\/NP4\/uWGzxj26lVaT+y+ztWN2kI5T92aw=",
       "url": "_framework\/Microsoft.AspNetCore.Components.dll"
     },
     {
@@ -185,7 +185,7 @@
       "url": "_framework\/netstandard.dll"
     },
     {
-      "hash": "sha256-cy4N60rL33dokewX5LNMZWY0axl3viRk9ph\/POA7A10=",
+      "hash": "sha256-NNoc9Kgv0jmJqMjSvucAIOdy7h7QzGjQaYUrdZzUWsw=",
       "url": "_framework\/NutritionCalc.Web.dll"
     },
     {
@@ -229,7 +229,7 @@
       "url": "_framework\/System.dll"
     },
     {
-      "hash": "sha256-DBEkp+qt\/hiaSTvqL40l+qmmeEtPupe5M309nZouMcs=",
+      "hash": "sha256-Sk3GWTQ0ydgkjNRU8IPP1SpJnYeVJ9DxsaxhBNAS3aM=",
       "url": "_framework\/System.Linq.dll"
     },
     {
@@ -257,7 +257,7 @@
       "url": "_framework\/System.ObjectModel.dll"
     },
     {
-      "hash": "sha256-72rgnapPdW0OTgvYjfKPqKzc4uoLr9tREgE3QuOAibM=",
+      "hash": "sha256-gJ8RApd9xqHg45zG3+KP39BVYchRgHWQzJzV5LsQnHs=",
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
@@ -265,7 +265,7 @@
       "url": "_framework\/System.Private.Uri.dll"
     },
     {
-      "hash": "sha256-6x5iW60KyOBYQ56j0ZlK1kUeNjKbMvsvNKY1ou67XIk=",
+      "hash": "sha256-2LWVZ2J5PgOu2tZkX14HNhuOwAMyJWZbdwz\/Hq1owTM=",
       "url": "_framework\/System.Runtime.dll"
     },
     {
@@ -293,5 +293,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.QuickGrid\/QuickGrid.razor.js"
     }
   ],
-  "version": "Pb5a8\/Q1"
+  "version": "jljzKokX"
 };
