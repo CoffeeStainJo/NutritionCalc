@@ -1,0 +1,75 @@
+﻿@page "/activity"
+
+<h1>Exercise</h1>
+
+<form>
+    <div class="form-group">
+        <label for="sets">Sets:</label>
+        <input type="text" class="form-control" id="sets" @bind="sets" />
+    </div>
+    <div class="form-group">
+        <label for="reps">Reps:</label>
+        <input type="text" class="form-control" id="reps" @bind="reps" />
+    </div>
+    <div class="form-group">
+        <label for="weight">Weight:</label>
+        <input type="text" class="form-control" id="weight" @bind="weight" />
+    </div>
+    <button type="button" class="btn btn-primary" @onclick="RegisterExercise">Register Exercise</button>
+</form>
+
+<table class="table" style="margin-top: 20px;">
+    <thead>
+        <tr>
+            <th>Set</th>
+            <th>Reps</th>
+            <th>Weight</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var set in Exercise.Sets)
+        {
+            <tr>
+                <td>@set</td>
+                <td>@Exercise.Reps</td>
+                <td>@Exercise.Weight</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code
+{
+    private Exercise2 Exercise { get; set; }
+
+    private string sets { get; set; }
+    private string reps { get; set; }
+    private string weight { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Exercise = new Exercise2(new List<int> { 10, 8, 6 }, 8, 185);
+    }
+
+    private void RegisterExercise()
+    {
+        List<int> setsList = sets.Split(',').Select(int.Parse).ToList();
+        int repsInt = int.Parse(reps);
+        int weightInt = int.Parse(weight);
+        Exercise = new Exercise2(setsList, repsInt, weightInt);
+    }
+
+    public class Exercise2
+    {
+        public List<int> Sets { get; set; }
+        public int Reps { get; set; }
+        public int Weight { get; set; }
+
+        public Exercise2(List<int> sets, int reps, int weight)
+        {
+            Sets = sets;
+            Reps = reps;
+            Weight = weight;
+        }
+    }
+}
