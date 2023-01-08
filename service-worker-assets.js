@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-tPR53K5qrC0F9MP9WUKwEIA788CVBh6R3SLY1v2Grx8=",
+      "hash": "sha256-uoir\/xGymnzZzKXc+lYWGvgdWaW4mhCay2Ik0ToMcnk=",
       "url": "NutritionCalc.Web.styles.css"
     },
     {
@@ -109,7 +109,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-XqaqmTiimq89EjXnV61nd14Z6HG4wi7uyv\/NAs7qe2s=",
+      "hash": "sha256-CkvhxG1OmbJMHidA88kDC+DXDbU9HFZnJNuAIdpbeDs=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -185,7 +185,7 @@
       "url": "_framework\/netstandard.dll"
     },
     {
-      "hash": "sha256-NNoc9Kgv0jmJqMjSvucAIOdy7h7QzGjQaYUrdZzUWsw=",
+      "hash": "sha256-4FEgZgBzunV2zFElWYijI5dMATlNec\/KYc6F5dQwH7o=",
       "url": "_framework\/NutritionCalc.Web.dll"
     },
     {
@@ -257,7 +257,7 @@
       "url": "_framework\/System.ObjectModel.dll"
     },
     {
-      "hash": "sha256-gJ8RApd9xqHg45zG3+KP39BVYchRgHWQzJzV5LsQnHs=",
+      "hash": "sha256-hWlr93UlOM1NN9AxNLY08eHIoIul9eNojd0O34G+Gpk=",
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
@@ -265,7 +265,7 @@
       "url": "_framework\/System.Private.Uri.dll"
     },
     {
-      "hash": "sha256-2LWVZ2J5PgOu2tZkX14HNhuOwAMyJWZbdwz\/Hq1owTM=",
+      "hash": "sha256-Ly3\/J2rGJmBaxaQHbIiG05FJxC3eNUa2VqHcaw1Bv48=",
       "url": "_framework\/System.Runtime.dll"
     },
     {
@@ -293,5 +293,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.QuickGrid\/QuickGrid.razor.js"
     }
   ],
-  "version": "jljzKokX"
+  "version": "77CFhiUx"
 };

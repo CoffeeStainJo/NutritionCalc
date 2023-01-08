@@ -1,5 +1,21 @@
 @import '_content/Microsoft.AspNetCore.Components.QuickGrid/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css';
 
+/* /Pages/Activity.razor.rz.scp.css */
+#app > div > main > article > form > button[b-d833gqwrs7] {
+    margin-top: 1rem;
+}
+
+#sets[b-d833gqwrs7]{
+    max-width: 3rem !important;
+}
+
+#reps[b-d833gqwrs7] {
+    max-width: 3rem !important;
+}
+
+#weight[b-d833gqwrs7] {
+    max-width: 4rem !important;
+}
 /* /Pages/Index.razor.rz.scp.css */
 .drag-drop-zone[b-7igmgoxxup] {
     border: 3px dashed #e68710;
@@ -48,6 +64,33 @@
     width: 50%;
     height: 50%;
     background-color: red;
+}
+
+/* Style the skeleton element */
+.skeleton[b-7igmgoxxup] {
+    background-color: #eee;
+    border-radius: 5px;
+    height: 20px;
+    margin: 10px 0;
+    width: 100%;
+}
+/* Add a pulsing animation to the skeleton element */
+@keyframes pulse-b-7igmgoxxup {
+    0% {
+        background-color: #eee;
+    }
+
+    50% {
+        background-color: #ddd;
+    }
+
+    100% {
+        background-color: #eee;
+    }
+}
+
+.skeleton.pulse[b-7igmgoxxup] {
+    animation: pulse-b-7igmgoxxup 1s infinite;
 }
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-sb61buaywp] {
