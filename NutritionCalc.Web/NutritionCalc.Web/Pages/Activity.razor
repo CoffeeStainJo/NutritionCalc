@@ -4,6 +4,10 @@
 
 <form>
     <div class="form-group">
+        <label for="sets">Exercise:</label>
+        <input type="text" class="form-control" id="name" @bind="name" />
+    </div>
+    <div class="form-group">
         <label for="sets">Sets:</label>
         <input type="text" class="form-control" id="sets" @bind="sets" />
     </div>
@@ -15,7 +19,7 @@
         <label for="weight">Weight:</label>
         <input type="text" class="form-control" id="weight" @bind="weight" />
     </div>
-    <button type="button" class="btn btn-primary" @onclick="RegisterExercise">Register Exercise</button>
+    <button type="button" class="btn btn-primary" @onclick="RegisterExercise">Add Exercise</button>
 </form>
 
 <table class="table" style="margin-top: 20px;">
@@ -42,6 +46,7 @@
 {
     private Exercise2 Exercise { get; set; }
 
+    private string name { get; set; }
     private string sets { get; set; }
     private string reps { get; set; }
     private string weight { get; set; }

@@ -1,0 +1,15 @@
+﻿#app > div > main > article > form > button {
+    margin-top: 1rem;
+}
+
+#sets{
+    max-width: 3rem !important;
+}
+
+#reps {
+    max-width: 3rem !important;
+}
+
+#weight {
+    max-width: 4rem !important;
+}

@@ -2,7 +2,7 @@
 {
     public class Exercise
     {
-        public string Name { get; set; }
+        public required string Name { get; init; }
         public List<Set> Sets { get; set; }
         public string Note { get; set; }
     }

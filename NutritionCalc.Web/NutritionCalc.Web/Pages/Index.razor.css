@@ -46,3 +46,30 @@
     height: 50%;
     background-color: red;
 }
+
+/* Style the skeleton element */
+.skeleton {
+    background-color: #eee;
+    border-radius: 5px;
+    height: 20px;
+    margin: 10px 0;
+    width: 100%;
+}
+/* Add a pulsing animation to the skeleton element */
+@keyframes pulse {
+    0% {
+        background-color: #eee;
+    }
+
+    50% {
+        background-color: #ddd;
+    }
+
+    100% {
+        background-color: #eee;
+    }
+}
+
+.skeleton.pulse {
+    animation: pulse 1s infinite;
+}
