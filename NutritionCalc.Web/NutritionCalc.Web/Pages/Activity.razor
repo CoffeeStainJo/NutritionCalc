@@ -58,6 +58,8 @@
 
     private void RegisterExercise()
     {
+        if(string.IsNullOrWhiteSpace(sets) || string.IsNullOrWhiteSpace(reps) || string.IsNullOrWhiteSpace(weight)) return;
+         
         List<int> setsList = sets.Split(',').Select(int.Parse).ToList();
         int repsInt = int.Parse(reps);
         int weightInt = int.Parse(weight);
