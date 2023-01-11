@@ -1,4 +1,6 @@
 ﻿@page "/activity"
+@using Microsoft.AspNetCore.Components.QuickGrid
+
 
 <h1>Exercise</h1>
 
@@ -25,7 +27,8 @@
 <table class="table" style="margin-top: 20px;">
     <thead>
         <tr>
-            <th>Set</th>
+            <th>Name</th>
+            <th>Sets</th>
             <th>Reps</th>
             <th>Weight</th>
         </tr>
@@ -34,6 +37,7 @@
         @foreach (var set in Exercise.Sets)
         {
             <tr>
+                <td>@Exercise.Name</td>
                 <td>@set</td>
                 <td>@Exercise.Reps</td>
                 <td>@Exercise.Weight</td>
@@ -41,6 +45,16 @@
         }
     </tbody>
 </table>
+
+@if (exercises is not null && exercises.Any())
+{
+    <QuickGrid Items="@exercises">
+        <PropertyColumn Property="@(p => p.Name)" Sortable="true" />
+        <PropertyColumn Property="@(p => p.Sets)" Title="Sets" Sortable="true" />
+        <PropertyColumn Property="@(p => p.Reps)" title="Reps" Sortable="true" />
+        <PropertyColumn Property="@(p => p.Weight)" title="Weight" Sortable="true" />
+    </QuickGrid>
+}
 
 @code
 {
@@ -51,26 +65,34 @@
     private string reps { get; set; }
     private string weight { get; set; }
 
+    IQueryable<Exercise2> exercises;
+
     protected override async Task OnInitializedAsync()
     {
-        Exercise = new Exercise2(new List<int> { 10, 8, 6 }, 8, 185);
+        //Exercise = new Exercise2(new List<int> { 10, 8, 6 }, 8, 185);
+        Exercise = new Exercise2();
     }
 
     private void RegisterExercise()
     {
         if(string.IsNullOrWhiteSpace(sets) || string.IsNullOrWhiteSpace(reps) || string.IsNullOrWhiteSpace(weight)) return;
-         
+
         List<int> setsList = sets.Split(',').Select(int.Parse).ToList();
         int repsInt = int.Parse(reps);
         int weightInt = int.Parse(weight);
-        Exercise = new Exercise2(setsList, repsInt, weightInt);
+        Exercise = new Exercise2(setsList, repsInt, weightInt) { Name = name };
+        name = sets = reps = weight = null;
+        exercises = new[] { Exercise }.AsQueryable();
     }
 
     public class Exercise2
     {
-        public List<int> Sets { get; set; }
+        public string Name { get; set; }
+        public List<int> Sets { get; set; } = new();
         public int Reps { get; set; }
         public int Weight { get; set; }
+
+        public Exercise2(){}
 
         public Exercise2(List<int> sets, int reps, int weight)
         {
