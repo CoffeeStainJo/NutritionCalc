@@ -9,10 +9,10 @@
         <label for="sets">Exercise:</label>
         <input type="text" class="form-control" id="name" @bind="name" />
     </div>
-    <div class="form-group">
+    @*<div class="form-group">
         <label for="sets">Sets:</label>
         <input type="text" class="form-control" id="sets" @bind="sets" />
-    </div>
+    </div>*@
     <div class="form-group">
         <label for="reps">Reps:</label>
         <input type="text" class="form-control" id="reps" @bind="reps" />
@@ -21,6 +21,7 @@
         <label for="weight">Weight:</label>
         <input type="text" class="form-control" id="weight" @bind="weight" />
     </div>
+    <button type="button" class="btn btn-success">add set ➕</button>
     <button type="button" class="btn btn-primary" @onclick="RegisterExercise">Add Exercise</button>
 </form>
 
@@ -46,6 +47,7 @@
     </tbody>
 </table>
 
+
 @if (exercises is not null && exercises.Any())
 {
     <QuickGrid Items="@exercises">
@@ -54,12 +56,17 @@
         <PropertyColumn Property="@(p => p.Reps)" title="Reps" Sortable="true" />
         <PropertyColumn Property="@(p => p.Weight)" title="Weight" Sortable="true" />
     </QuickGrid>
+
+    @foreach (var ex in exercises.Select(e => e.Sets))
+    {
+            <NutritionCalc.Web.Components.SetComponent />
+    } 
 }
 
 @code
 {
     private Exercise2 Exercise { get; set; }
-
+    private int _numberOfSets = 1;
     private string name { get; set; }
     private string sets { get; set; }
     private string reps { get; set; }
