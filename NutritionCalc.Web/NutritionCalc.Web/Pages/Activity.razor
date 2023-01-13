@@ -21,7 +21,7 @@
         <label for="weight">Weight:</label>
         <input type="text" class="form-control" id="weight" @bind="weight" />
     </div>
-    <button type="button" class="btn btn-success">add set ➕</button>
+    <button type="button" class="btn btn-success" @onclick="AddSet">add set ➕</button>
     <button type="button" class="btn btn-primary" @onclick="RegisterExercise">Add Exercise</button>
 </form>
 
@@ -57,9 +57,9 @@
         <PropertyColumn Property="@(p => p.Weight)" title="Weight" Sortable="true" />
     </QuickGrid>
 
-    @foreach (var ex in exercises.Select(e => e.Sets))
+    @foreach (var ex in exercises)
     {
-            <NutritionCalc.Web.Components.SetComponent />
+        <NutritionCalc.Web.Components.SetComponent />
     } 
 }
 
@@ -71,6 +71,7 @@
     private string sets { get; set; }
     private string reps { get; set; }
     private string weight { get; set; }
+    private List<Exercise2> exerciseList = Enumerable.Empty<Exercise2>().ToList();
 
     IQueryable<Exercise2> exercises;
 
@@ -78,6 +79,9 @@
     {
         //Exercise = new Exercise2(new List<int> { 10, 8, 6 }, 8, 185);
         Exercise = new Exercise2();
+        //exercises = new[] { Exercise }.AsQueryable();
+        exerciseList.Add(Exercise);
+        exercises = exerciseList.AsQueryable();
     }
 
     private void RegisterExercise()
@@ -89,7 +93,16 @@
         int weightInt = int.Parse(weight);
         Exercise = new Exercise2(setsList, repsInt, weightInt) { Name = name };
         name = sets = reps = weight = null;
-        exercises = new[] { Exercise }.AsQueryable();
+        exerciseList.Add(new Exercise2());
+        exercises = exerciseList.AsQueryable();
+    }
+
+    private void AddSet()
+    {
+        Exercise.Sets.Add(1);
+        StateHasChanged();
+        ///*exercises*/ = new[] { Exercise }.AsQueryable();
+        
     }
 
     public class Exercise2
