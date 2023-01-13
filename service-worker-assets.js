@@ -109,7 +109,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-ZYrmNXIaqEEnFS62ESxjErHaKhfmsXYG6z1AzDZCYWo=",
+      "hash": "sha256-3rEf\/Fv5liNxnVV\/ERw20aWcDcOaKavcka\/5ZW9yCYo=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -185,7 +185,7 @@
       "url": "_framework\/netstandard.dll"
     },
     {
-      "hash": "sha256-z6nq4TFG3yhLtcs1NnPPnoZtbjCtj6bKshGl6LhNOQg=",
+      "hash": "sha256-YaU\/fvnRCZu8Or7zhHigUHlq7Wqo\/N1nNUZ+gj2YvMQ=",
       "url": "_framework\/NutritionCalc.Web.dll"
     },
     {
@@ -229,7 +229,7 @@
       "url": "_framework\/System.dll"
     },
     {
-      "hash": "sha256-rjhij37qYFGxu+7oH8nQFa2G9+CHTrVw\/gLXfsiKGQ4=",
+      "hash": "sha256-IOZIAF1m3y8IAixPPPOKXfZKB9dCdyeTCGbEDGzxNMg=",
       "url": "_framework\/System.Linq.dll"
     },
     {
@@ -237,7 +237,7 @@
       "url": "_framework\/System.Linq.Expressions.dll"
     },
     {
-      "hash": "sha256-1Ucu43C5wtmYbAIL1X7h+AA7MWRRC8UgZXoIg0HWxTg=",
+      "hash": "sha256-3IHZe8WyS3h0DLb\/24puaoiznio8Sd4tCrOKXe3KY9U=",
       "url": "_framework\/System.Linq.Queryable.dll"
     },
     {
@@ -293,5 +293,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.QuickGrid\/QuickGrid.razor.js"
     }
   ],
-  "version": "caNSiOOL"
+  "version": "gqLluvqi"
 };
