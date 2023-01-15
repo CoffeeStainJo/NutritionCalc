@@ -1,0 +1,60 @@
+﻿<div class="dialog-container">
+    <div class="dialog">
+        <div class="dialog-title">
+            @*<h2>@Pizza.Special.Name</h2>*@
+            @*@Pizza.Special.Description*@
+        </div>
+        <form class="dialog-body">
+            <div>
+                <label>Size:</label>
+                @*<input type="range" min="@Pizza.MinimumSize" max="@Pizza.MaximumSize" step="1" @bind="Pizza.Size" @bind:event="oninput" />*@
+                @*<span class="size-label">
+                    @(Pizza.Size)" (£@(Pizza.GetFormattedTotalPrice()))
+                </span>*@
+            </div>
+            <div>
+                content
+            </div>
+
+            <div class="toppings">
+                content
+            </div>
+        </form>
+        <div class="dialog-buttons">
+            <button class="btn btn-secondary mr-auto" @onclick="OnCancel">Cancel</button>           
+            <button class="btn btn-success ml-auto" @onclick="OnConfirm">Order</button>
+        </div>
+    </div>
+</div>
+
+@code
+{
+    [Parameter] public EventCallback OnCancel { get; set; }
+    [Parameter] public EventCallback OnConfirm { get; set; }
+
+    //protected async override Task OnInitializedAsync()
+    //{
+    //    toppings = await HttpClient.GetFromJsonAsync<List<Topping>>("toppings");
+    //}
+
+    //void ToppingSelected(ChangeEventArgs e)
+    //{
+    //    if (int.TryParse((string)e.Value, out var index) && index >= 0)
+    //    {
+    //        AddTopping(toppings[index]);
+    //    }
+    //}
+
+    //void AddTopping(Topping topping)
+    //{
+    //    if (Pizza.Toppings.Find(pt => pt.Topping == topping) == null)
+    //    {
+    //        Pizza.Toppings.Add(new PizzaTopping() { Topping = topping });
+    //    }
+    //}
+
+    //void RemoveTopping(Topping topping)
+    //{
+    //    Pizza.Toppings.RemoveAll(pt => pt.Topping == topping);
+    //}
+}

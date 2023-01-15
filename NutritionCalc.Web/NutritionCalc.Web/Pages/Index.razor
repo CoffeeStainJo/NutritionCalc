@@ -7,13 +7,6 @@
 
 <PageTitle>Index</PageTitle>
 
-@*<QuickGrid Items="@people">
-    <PropertyColumn Property="@(p => p.PersonId)" Sortable="true" />
-    <PropertyColumn Property="@(p => p.Name)" Sortable="true" />
-    <PropertyColumn Property="@(p => p.BirthDate)" Format="yyyy-MM-dd" Sortable="true" />
-</QuickGrid>*@
-
-
 <QuickGrid Items="@exercises">
     <PropertyColumn Property="@(p => p.Name)" Sortable="true" />
     <PropertyColumn Property="@(p => p.Sets.Count)" Title="Sets" Sortable="true" />
@@ -21,19 +14,26 @@
     <PropertyColumn Property="@(p => p.Sets.Sum(s => s.Weight))" title="Total weight" Sortable="true" />
 </QuickGrid>
 
-@*<button class="btn btn-primary" style="background-color:red; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+<button class="btn btn-primary" id="yeet" @onclick="ShowDialog">
     Click me!
 </button>
 
-<div class="parent">
+@*<div class="parent">
     <div class="child">I'm centered!</div>
 </div>*@
+
+@if (showingConfigureDialog)
+{
+    <ActivityDialog OnCancel="CancelDialog"
+                OnConfirm="ConfirmDialog" />
+}
 
 <div class="skeleton pulse"></div>
 
 @code 
 {
     record Person(int PersonId, string Name, DateOnly BirthDate);
+    bool showingConfigureDialog;
 
     IQueryable<Exercise> exercises;
 
@@ -62,5 +62,20 @@
         };
 
         exercises = new[] { exercise }.AsQueryable();
+    }
+
+    void CancelDialog()
+    {
+        showingConfigureDialog = false;
+    }
+
+    void ConfirmDialog()
+    {
+        showingConfigureDialog = false;
+    }
+
+    void ShowDialog()
+    {
+        showingConfigureDialog = true;
     }
 }

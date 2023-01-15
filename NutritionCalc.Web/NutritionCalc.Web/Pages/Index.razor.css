@@ -73,3 +73,11 @@
 .skeleton.pulse {
     animation: pulse 1s infinite;
 }
+
+#yeet {
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
