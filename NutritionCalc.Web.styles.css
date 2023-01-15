@@ -92,6 +92,148 @@
 .skeleton.pulse[b-7igmgoxxup] {
     animation: pulse-b-7igmgoxxup 1s infinite;
 }
+
+#yeet[b-7igmgoxxup] {
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* /Shared/ActivityDialog.razor.rz.scp.css */
+.dialog-container[b-iuojpagqbs] {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2000;
+    display: flex;
+    animation: dialog-container-entry-b-iuojpagqbs 0.2s;
+}
+
+@keyframes dialog-container-entry-b-iuojpagqbs {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.dialog[b-iuojpagqbs] {
+    background-color: white;
+    box-shadow: 0 0 12px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    z-index: 2000;
+    align-self: center;
+    margin: auto;
+    width: 700px;
+    max-height: calc(100% - 3rem);
+    animation: dialog-entry-b-iuojpagqbs 0.4s;
+    animation-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+
+@keyframes dialog-entry-b-iuojpagqbs {
+    0% {
+        transform: translateY(30px) scale(0.95);
+    }
+
+    100% {
+        transform: translateX(0px) scale(1.0);
+    }
+}
+
+.dialog-title[b-iuojpagqbs] {
+    background-color: #444;
+    color: #fff2cc;
+    padding: 1.3rem 2rem;
+}
+
+    .dialog-title h2[b-iuojpagqbs] {
+        color: white;
+        font-size: 1.4rem;
+        margin: 0;
+        font-family: 'Bahnschrift', Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        line-height: 1.3rem;
+    }
+
+.dialog-body[b-iuojpagqbs] {
+    flex-grow: 1;
+    padding: 0.5rem 3rem 1rem 0;
+}
+
+.dialog-buttons[b-iuojpagqbs] {
+    height: 4rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    background-color: #eee;
+    padding: 0 1rem;
+}
+
+.dialog-body > div[b-iuojpagqbs] {
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.dialog-body label[b-iuojpagqbs] {
+    text-align: right;
+    width: 200px;
+    margin: 0 1.5rem;
+}
+
+.dialog-body input[b-iuojpagqbs], .dialog-body select[b-iuojpagqbs] {
+    flex-grow: 1;
+    width: unset;
+}
+
+.dialog-body .size-label[b-iuojpagqbs] {
+    min-width: 110px;
+    text-align: right;
+}
+
+.dialog .toppings[b-iuojpagqbs] {
+    text-align: center;
+    display: block;
+    padding-left: 4rem;
+}
+
+.dialog .topping[b-iuojpagqbs] {
+    display: inline-block;
+    background-color: #a04343;
+    color: white;
+    padding: 0.2rem 1rem;
+    border-radius: 2rem;
+    margin: 0.4rem 0.3rem;
+    font-weight: 700;
+}
+
+.dialog .topping-price[b-iuojpagqbs] {
+    font-weight: 100;
+    font-size: 0.8rem;
+}
+
+    .dialog .topping-price[b-iuojpagqbs]::before {
+        content: '£';
+    }
+
+.delete-topping[b-iuojpagqbs] {
+    background: none;
+    border: none;
+    color: white;
+    padding: 0.2rem 0.2rem 0.3rem 0.2rem;
+    cursor: pointer;
+}
+
+    .delete-topping:hover[b-iuojpagqbs] {
+        color: yellow;
+    }
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-sb61buaywp] {
     position: relative;

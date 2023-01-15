@@ -8,7 +8,7 @@
   "resources": {
     "assembly": {
       "BlazorComponentUtilities.dll": "sha256-eDp5c3t6atzlthDvZL2SpINQcSYs7gBnbOHNS\/1MkUU=",
-      "Microsoft.AspNetCore.Components.dll": "sha256-D5C5jAZeja7Z8mCLPVkDRmZ5k0agb4mt2hoL7ZEZUJk=",
+      "Microsoft.AspNetCore.Components.dll": "sha256-16gEYA7nX\/jI8VH3KbavDzp9M7xoVFW7cjHRtam23Vw=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-AQ3I77Gi\/oQfJ8gdiMLY621qx1HPHzieIA1vnvq3Knk=",
       "Microsoft.AspNetCore.Components.QuickGrid.dll": "sha256-PW\/wHFaTp8vYiuguHaQ3AwRZufEAL3poOUlA2LvA0BA=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-5YjdS+v9LF9aSKldwY1TA2IjDzbzXHkq59KYUcl8Ius=",
@@ -25,7 +25,7 @@
       "Microsoft.JSInterop.dll": "sha256-YRzWIgby6n64g3f53vGRR6temE68PvMn0Z+IUa7xqvU=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-bn\/jJGkSeaQbmqAl6uUM0y1joLrVEzldOc3y5mscYMk=",
       "netstandard.dll": "sha256-UCYkvqkG+F\/8h5Enb7lYxhHxU5yIod9u\/\/H1XX1Ob58=",
-      "NutritionCalc.Web.dll": "sha256-YaU\/fvnRCZu8Or7zhHigUHlq7Wqo\/N1nNUZ+gj2YvMQ=",
+      "NutritionCalc.Web.dll": "sha256-XdpefBIACFIs4CvCjo1vJhNpapXFYa2iYEKAGm0D1qo=",
       "System.Collections.Concurrent.dll": "sha256-50dKg82KhXmC5bWg9sgBtFjjz\/nDT1mHqjB1J1XHQdg=",
       "System.Collections.dll": "sha256-FAo5a\/s7SnYtCfWHs0x4Jw7SaZcHIdFeDZ7qS6k13S8=",
       "System.Collections.NonGeneric.dll": "sha256-R3CWBcKagzpAH\/PxFCqycdS\/xYTzfgUKSnuI9Al2flE=",
